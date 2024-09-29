@@ -1,0 +1,72 @@
+/* Style for the overall body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Centered container for the orders */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Style for the order list */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Individual order list item */
+ul li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for text within list items */
+ul li strong {
+    display: block;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+/* Styling for the product name and status */
+ul li .productName {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul li .status {
+    font-size: 1em;
+    color: #008000;
+    margin-top: 10px;
+}
+
+/* Add a hover effect to the list items */
+ul li:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+}
+
+/* Add padding to the container to prevent overflow */
+.container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}

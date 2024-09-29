@@ -1,0 +1,530 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+body{
+    background-image: url('/images/milky-way-starry-sky-night-mountains-lake-reflection-cold-5k-3840x2160-287.jpg');
+    background-size: cover;
+    overflow-x: hidden;
+}
+html,body{
+    background-color: #111111;
+  }
+
+body::before{
+    position: absolute;
+    width: min(1400px, 90vw);
+    top: 10%;
+    left: 50%;
+    height: 90%;
+    transform: translateX(-50%);
+    content: '';
+    background-image: url(images/bg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    pointer-events: none;
+}
+
+@import url('https://fonts.cdnfonts.com/css/ica-rubrik-black');
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+.banner{
+    margin-top: 5vh;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.banner .slider{
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: autoRun 20s linear infinite;
+    z-index: 2;
+}
+@keyframes autoRun{
+    from{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(0deg);
+    }to{
+        transform: perspective(1000px) rotateX(-16deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(550px);
+}
+.banner .slider .item img{
+    width: 9vw;
+    height: 28vh;
+    object-fit: cover;
+}
+.banner .content{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 100vw);
+    height: max-content;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.banner .content h1{
+    font-family: 'ICA Rubrik';
+    font-size: 16em;
+    line-height: 1em;
+    color: #25283B;
+    position: relative;
+}
+.banner .content h1::after{
+    position: absolute;
+    inset: 0 0 0 0;
+    content: attr(data-content);
+    z-index: 2;
+    -webkit-text-stroke: 2px #d2d2d2;
+    color: transparent;
+}
+.banner .content .author{
+    font-family: Poppins;
+    text-align: right;
+    max-width: 200px;
+}
+.banner .content h2{
+    font-size: 3em;
+}
+.banner .content .model{
+    background-image: url(images/model.png);
+    width: 100%;
+    height: 60vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-size: auto 130%;
+    background-repeat: no-repeat;
+    background-position: top center;
+    z-index: 1;
+}
+@media screen and (max-width: 1023px) {
+    .banner .slider{
+        width: 160px;
+        height: 200px;
+        left: calc(50% - 80px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(300px);
+    }
+    .banner .content h1{
+        text-align: center;
+        width: 100%;
+        text-shadow: 0 10px 20px #000;
+        font-size: 7em;
+    }
+    .banner .content .author{
+        color: #fff;
+        padding: 20px;
+        text-shadow: 0 10px 20px #000;
+        z-index: 2;
+        max-width: unset;
+        width: 100%;
+        text-align: center;
+        padding: 0 30px;
+    }
+
+    .banner .slider .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .banner .content .model{
+       
+        width:100%;
+        height: 80vh;
+       
+    }
+
+    .banner .content .model img{
+       
+        width: 20;
+        height: 40vh;
+       
+    }
+}
+@media screen and (max-width: 767px) {
+    .banner .slider{
+        width: 100px;
+        height: 150px;
+        left: calc(50% - 50px);
+    }
+    .banner .slider .item{
+        transform: 
+            rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+            translateZ(180px);
+    }
+    .banner .content h1{
+        font-size: 5em;
+    }
+
+
+}
+#navbar{
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2vw;
+    margin-top: 6vh;
+    height: 5vh;
+   /*background-color: #7b77ff;*/
+   position:sticky;
+  }
+  #navbar img{
+    
+      height: 12vh;
+      width: 12vw;
+    
+  }
+  
+   #icon i{
+      font-size: 3vh;
+      color: white;
+      transition: 0.3s;
+  }
+  
+  #icon i:hover{
+      font-size: 4vh;
+      color: rgb(218, 94, 235);
+      filter: drop-shadow( 1px 1px 20px rgba(243, 133, 8, 0.911));
+      transform:perspective(250px) rotateX('2deg');
+    
+  }
+  #icon i span{
+      color: rgb(248, 244, 244);
+      position: absolute;
+      top: 2vh;
+      left: 1;
+      border: 22px;
+      font-size: 2vh;
+  }
+
+.tab ul{
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    gap: 8vw;
+    flex-wrap: nowrap;
+    list-style: none;
+}
+.tab ul li a{
+    font-size: 3vh;
+    text-decoration: none;
+    color: rgb(253, 241, 241);
+    transition: .5s;
+    padding: 6px 20px;
+    position: relative;
+}
+.tab a:hover{
+    color: #0ef;
+
+}
+.tab a span{
+    position: absolute;
+    top: 0;
+    left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+border-bottom: 2px solid #0ef;
+
+border-radius: 15px;
+transform: scale(0) translateY(50px);
+transition: .5s;
+opacity: 0;
+}
+.tab a:hover span{
+    transform: scale(1) translateY(0);
+    opacity: 1;
+
+}
+/*working cart*/
+#working-cart{
+    height: 100%;
+    width: 30vw;
+    background-color: #f5f5f5;
+    position: absolute;
+    top: 0;
+    right: -30vw;
+    z-index: 2;
+    border-radius: 22px;
+    transition:0.3s;
+}
+#working-cart.active{
+    right: 0;
+}
+
+/*cross icon in cart page*/
+#working-cart i{
+    font-size: 3vh;
+    color: rgb(17, 16, 16);
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    
+    
+}
+#working-cart h1{
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+}
+#free-design h1{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 6vh;
+    color: #f5f5f5;
+}
+.free-product{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    gap: 2vw;
+}
+.free-product img{
+    height: 44vh;
+    width: 18vw;
+    margin: 1vh;
+    margin-top: 2vh;
+    padding: 1.5vw;
+    
+    position: relative;
+    box-shadow: rgba(32, 32, 32, 0.5);  
+}
+#foter{
+    margin-top: 1vh;
+    background-color:rgb(83, 81, 81);
+    color: white;
+    height: 50vh;
+    width: 100%;
+}
+.footer-nav{
+    height: 6vh;
+    width: 100%;
+    background-color: rgb(198, 119, 243);
+    padding: 1.5vh;
+    font-size: 3vh;
+}
+.hed{
+    padding: 2vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.data{
+    display: flex;
+    justify-content: space-between;
+    padding: 1vw;
+    font-size: 2vh;
+}
+.data p a{
+    text-decoration: none;
+    color: aliceblue;
+   
+}
+.end{
+    margin-top: 10vh;
+    height: 6vh;
+    width: 100%;
+    background-color: rgb(59, 58, 58);
+    padding: 1.5vh;
+    font-size: 3vh;
+    padding-left: 38vw;
+}
+#working-cart h1{
+    font-size: 4vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+}
+.cart-box{
+    display:grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.cart-img{
+    height: 15vh;
+    width: 9vw;
+    object-fit: contain;
+    padding: 10px;
+}
+.detail-box{
+    display: flex;
+    justify-content: space-between;    
+}
+.cart-product-title{
+    font-size: 1.5vh;
+    text-transform: uppercase;
+    flex-wrap:nowrap;
+}
+.cart-quantity{
+    width: 1.3vw;
+    height: auto;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5vh;
+    border-top: 1px solid black;
+}
+.total-title{
+    font-size: 3vh;
+    font-weight: 600;
+    margin-right: 1vw;
+}
+.total-price{
+    font-size: 3vh;
+    font-weight: 600;
+    margin-right: 4vw;
+}
+.btn-buy{
+    height: 4vh;
+    width: 12vw;
+    margin-left:10vw;
+    margin-top: 3vh;
+    border-radius: 22px;
+}
+@media screen and (max-width : 1110px) {
+    .tab ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 1vw;
+      gap: 4vw;
+      flex-wrap: nowrap;
+      list-style: none;
+    }
+    .tab ul li a {
+      font-size: 3vh;
+      text-decoration: none;
+     color: rgb(247, 243, 243);
+      transition: 0.5s;
+      padding: 3px 10px;
+      position: relative;
+    }
+  }
+  #sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.247);
+    backdrop-filter: blur(10px);
+    box-sizing: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 2vh;
+  }
+  #sidebar li a{
+    text-decoration: none;
+    list-style: none;
+   color: aliceblue;
+  }
+  #sidebar li {
+    margin-top: 2vh;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+   
+  }
+  #sidebar li a:hover{
+    color: #0ef;
+    font-size: 3vh;
+    transition: 0.5s;
+    
+    border-radius: 20px;
+  }
+  .menu-button{
+    display: none;
+    }
+
+@media screen and (max-width: 800px) {
+.hideOnMobile{
+  display: none;
+}
+.menu-button{
+display: block;
+}
+  
+}
+@media screen and  (max-width: 400px) {
+#sidebar{
+width: 100%;
+}
+  
+}
+@media screen and (max-width: 375px) {
+    #foter .data,.hed,.end{
+      display: none;
+    }
+    #foter .footer-nav{
+      font-size: 2.3vh;
+    }
+    #foter{
+     height: 10vh;
+    }
+  }
+  #foter .data,.hed,.end{
+    display: none;
+  }
+  #foter .footer-nav{
+    font-size: 2.3vh;
+  }
+  #foter{
+   height: 10vh;
+  }
+
+  
+  /* Media query to ensure that only one image is shown per row at 1024px or less */
+@media screen and (max-width: 1024px) {
+    .free-product {
+        display: flex;
+        flex-direction: column; /* Stack the images vertically */
+        align-items: center; /* Center the images horizontally */
+    }
+
+    .free-product img {
+        width: 100%; /* Make each image take up the full width of its container */
+        height: auto; /* Ensure the height adjusts automatically */
+        margin-bottom: 20px; /* Add space between the images */
+    }
+    #free-design h1{
+        font-size: 3vh;
+    }
+}
+
+/* Continue with your existing styles for navbar, footer, etc. */
+

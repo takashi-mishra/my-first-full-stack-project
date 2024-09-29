@@ -1,0 +1,194 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+#pannel {
+  position: relative;
+  top: 2vh;
+  left: 43%;
+}
+
+#product-form {
+  margin: 3vh;
+  gap: 2vw;
+  border: 2px solid black;
+  padding: 2vh;
+  background-color: plum;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#form input[type="text"],
+#form input[type="number"] {
+  margin-top: 2vh;
+  height: 4vh;
+  font-size: 2vh;
+  padding: 0.5vw;
+  border-radius: 22px;
+}
+
+#form button {
+  margin-top: 2vh;
+  height: 4vh;
+  font-size: 2vh;
+  border-radius: 22px;
+}
+
+/* Hide the original file inputs */
+#form input[type="file"] {
+  display: none;
+}
+
+/* Style the image labels to replace file inputs */
+#form label {
+  display: block;
+  margin-top: 2vh;
+  font-size: 2vh;
+  height: 4vh;
+  border: 2px solid black;
+  border-radius: 22px;
+  padding-left:48.5%;
+  background-color: aliceblue;
+}
+
+/* Add a class for image containers */
+.image-container {
+  display: flex;
+  gap: 1vw;
+  margin-top: 1vh;
+}
+
+/* Style the images */
+.image-container img {
+  width: 100px; /* Adjust size as needed */
+  height: auto;
+  cursor: pointer;
+  border: 2px solid black; /* Optional: Add a border */
+  border-radius: 5px; /* Optional: Round corners */
+}
+
+.image-container img:hover {
+  opacity: 0.8; /* Optional: Add a hover effect */
+}
+
+/*listed product*/
+
+#name{
+  position: relative;
+  top: 2vh;
+  left: 43%;
+}
+/* Flexbox applied to the parent container */
+#title {
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh;
+  background-color: #333;
+  color: white;
+  margin-top: 3vh;
+}
+
+/* Each h2 element will take equal space and align properly */
+#title h2 {
+  margin: 0; /* Remove margin to prevent spacing issues */
+  flex: 1; /* Make the h2 elements take equal space */
+  text-align: center; /* Center the text inside each h2 */
+}
+
+#list {
+  display: flex;
+  flex-direction: column; /* Stack products vertically */
+  justify-content: flex-start; /* Align items at the start */
+  margin-top: 3vh;
+  gap: 2vh; /* Add vertical space between each product */
+}
+
+/* Style for each product item */
+#list h3 {
+  margin: 0;
+  padding: 0;
+}
+
+#list img {
+  height: 12vh;
+  width: 6vw;
+  object-fit: cover;
+  background-size: cover;
+  margin-top: 1vh;
+}
+.product-item {
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: space-around;
+ 
+  border: 1px solid #ccc;
+  padding: 1vh;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.product-item img {
+  margin-top: 1vh;
+}
+
+.product-item h3 {
+  display: flex;
+  align-items: center;
+}
+#view{
+  height: 5vh;
+  width: 22vw;
+  color: darkgreen;
+  background-color: bisque;
+  border-radius:22px;
+  margin-bottom: 3vh;
+}
+#view-parrents{
+position: relative;
+top: 3vh;
+left: 42%;
+}
+
+/*orders*/
+#orders h1{
+  position: relative;
+  top: 2vh;
+  bottom: 2vh;
+  left: 42%;
+}
+#bala{
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh;
+  background-color: #333;
+  color: white;
+  margin-top: 3vh;
+}
+#order-detail{
+  height: 12vh;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  border: 1px solid #ccc;
+  padding: 1vh;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+.delete-btn{
+  background-color: #bb6af1;
+  width: 6vw;
+  height: 4vh;
+  margin-top: 2vh;
+  border-radius: 22px;
+}
+

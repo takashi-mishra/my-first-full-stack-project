@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheet/admin.css">
+    <title>admin-pannel</title>
+  </head>
+  <body>
+    <h1 id="pannel">Admin-pannel</h1>
+    <div id="product-form">
+      <h2>uploads the product</h2>
+      <form action="/uploads" method="POST" enctype="multipart/form-data" id="form">
+          <input type="text" name="productName" placeholder="Enter the title" required>
+          <input type="number" name="Price" placeholder="Enter the price" required>
+  
+          <!-- File input for Image 1 -->
+          <label for="img1">Image 1</label>
+          <input type="file" id="img1" name="img1" required>
+  
+          <!-- File input for Image 2 -->
+          <label for="img2">Image 2</label>
+          <input type="file" id="img2" name="img2" required>
+  
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+
+  <h1 id="name">Product-list</h1>
+  
+
+<div id="title">
+  
+    <h2>Product-Name</h2>
+    <h2>Product-Price</h2>
+    <h2>Product-Image</h2>
+    <h2>Delete-Option</h2>
+  
+</div>
+ 
+<div id="list">
+  <% products.forEach(function(product) { %>
+    <div class="product-item">
+      <h3><%= product.productName %></h3>
+      <h3>Price: $<%= product.Price %></h3>
+      <img src="<%= product.productImage %>" alt="Product Image">
+
+      <!-- Delete Button Form -->
+      <form action="/products/<%= product._id %>?_method=DELETE" method="POST" class="delete-form">
+        <button type="submit" class="delete-btn">Delete</button>
+      </form>
+    </div>
+  <% }); %>
+</div>
+
+
+</div>
+
+   <!--orders ejs-->
+
+<div id="orders">
+  <h1>ORDERS</h1>
+<div id="bala">
+  
+  <h2>User-name</h2>
+  <h2>User-email</h2>
+  <h2>User-number</h2>
+  <h2>User-adaress</h2>
+  <h2>Product-name</h2>
+  <h2>Delete-option</h2>
+</div>
+<% orders.forEach(function(order) { %>
+<div id="order-detail">
+  <h3><%=order.userName%></h3>
+  <h3><%=order.userEmail%></h3>
+  <h3><%=order.userNumber%></h3>
+  <h3><%=order.userAddress%></h3>
+  <h3><%=order.productName%></h3>
+  <form action="/orders/<%= order._id %>?_method=DELETE" method="POST" class="delete-form">
+    <button type="submit" class="delete-btn">Delete</button>
+  </form>
+</div>
+<% }); %>
+</div>
+
+<div id="view-parrents">
+  <a href="/"><button id="view">view-home-page</button></a>
+  </div>
+
+  </body>
+</html>
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheet/admin.css">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <div id="product-form">
+        <form action="/uploads" method="post" enctype="multipart/form-data">
+            <input type="file" name="image" />
+            <input type="text" name="productName" placeholder="Enter the title" />
+            <input type="number" name="Price" placeholder="Enter the price" />
+            <button>Upload</button>
+        </form>
+    </div>
+</body>
+</html>-->
+
